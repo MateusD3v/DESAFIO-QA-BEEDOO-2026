@@ -1,0 +1,48 @@
+ID,Funcionalidade,Cenário,Passos (Gherkin),Resultado Esperado,Status,Evidência
+TC01,Cadastro de Curso,Cadastrar curso com dados válidos,"Dado que estou na tela de cadastro de cursos
+Quando preencho todos os campos obrigatórios com dados válidos
+E clico no botão ""Salvar""
+Então o sistema deve exibir uma mensagem de sucesso
+E o curso deve aparecer na listagem de cursos",O curso é cadastrado e listado corretamente.,Pendente,
+TC02,Cadastro de Curso,Validar campos obrigatórios vazios,"Dado que estou na tela de cadastro de cursos
+Quando deixo um ou mais campos obrigatórios em branco
+E clico no botão ""Salvar""
+Então o sistema deve exibir mensagens de erro informando os campos obrigatórios",Mensagens de erro exibidas para campos obrigatórios.,Pendente,
+TC03,Cadastro de Curso,Cadastrar curso com título duplicado,"Dado que já existe um curso cadastrado com o título ""Curso de Teste""
+Quando tento cadastrar um novo curso com o mesmo título ""Curso de Teste""
+E preencho os demais campos corretamente
+E clico no botão ""Salvar""
+Então o sistema deve impedir o cadastro
+E exibir uma mensagem informando que o curso já existe",Sistema impede cadastro duplicado.,Pendente,
+TC04,Cadastro de Curso,Cadastrar curso com caracteres especiais,"Dado que estou na tela de cadastro
+Quando preencho o título com caracteres especiais (!@#$%^&*)
+E preencho os demais campos corretamente
+E clico no botão ""Salvar""
+Então o sistema deve aceitar o cadastro (se permitido) ou tratar adequadamente",Curso cadastrado ou mensagem amigável.,Pendente,
+TC05,Cadastro de Curso,Cadastrar curso com descrição muito longa,"Dado que estou na tela de cadastro
+Quando preencho a descrição com um texto muito longo (> 500 caracteres)
+E preencho os demais campos corretamente
+E clico no botão ""Salvar""
+Então o sistema deve truncar o texto ou exibir um alerta de limite de caracteres",Limite de caracteres respeitado ou alerta exibido.,Pendente,
+TC06,Listagem de Cursos,Visualizar listagem de cursos,"Dado que existem cursos cadastrados no sistema
+Quando acesso a página de listagem
+Então devo visualizar uma tabela ou lista com os cursos
+E as informações (Título, Descrição, etc.) devem estar corretas",Lista de cursos exibida corretamente.,Pendente,
+TC07,Listagem de Cursos,Buscar curso inexistente,"Dado que estou na listagem de cursos
+Quando pesquiso por um termo que não existe
+Então o sistema deve exibir uma mensagem ""Nenhum curso encontrado"" ou lista vazia",Mensagem de ""Nenhum resultado"" exibida.,Pendente,
+TC08,Listagem de Cursos,Paginação (se houver),"Dado que existem muitos cursos cadastrados (mais que o limite da página)
+Quando navego para a próxima página
+Então devo ver os próximos registros
+E a numeração da página deve ser atualizada",Navegação entre páginas funciona corretamente.,Pendente,
+TC09,Edição de Curso (Se disponível),Editar informações de um curso,"Dado que tenho um curso cadastrado
+Quando clico na opção de editar
+E altero o título do curso
+E salvo as alterações
+Então o sistema deve exibir a mensagem de sucesso
+E a listagem deve mostrar o novo título",Dados atualizados com sucesso.,Pendente,
+TC10,Exclusão de Curso (Se disponível),Excluir um curso,"Dado que tenho um curso cadastrado
+Quando clico na opção de excluir
+E confirmo a ação no modal (se houver)
+Então o sistema deve remover o curso da listagem
+E exibir uma mensagem de sucesso",Curso removido da listagem.,Pendente,
