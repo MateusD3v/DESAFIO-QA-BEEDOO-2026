@@ -37,12 +37,11 @@ A aplicação tem como objetivo principal gerenciar o catálogo de cursos de uma
 ## 3. Artefatos de Teste
 
 ### 📄 Planilha de Cenários e Casos de Teste
-Os cenários de teste foram documentados diretamente neste repositório para facilitar a visualização e versionamento.
+Acesse a planilha completa com os cenários e casos de teste no link abaixo:
 
-*   **[Visualizar Cenários de Teste (Markdown)](CENARIOS.md)**
-*   **[Baixar Planilha (CSV)](CENARIOS_DE_TESTE.csv)**
+👉 **[Google Sheets - Cenários de Teste Beedoo QA](https://docs.google.com/spreadsheets/d/1IWNYsbaibgFbZ66wXe6q4ZB8AvAmyuE52Iuuy8rm6ck/edit?usp=sharing)**
 
-> **Nota**: Caso seja necessário importar para o Google Sheets, utilize o arquivo CSV acima.
+> **Backup**: Os cenários também estão disponíveis neste repositório em formato [Markdown (CENARIOS.md)](CENARIOS.md) e [CSV (CENARIOS_DE_TESTE.csv)](CENARIOS_DE_TESTE.csv).
 
 ### 📂 Evidências de Execução
 [INSIRA AQUI O LINK DA SUA PASTA NO GOOGLE DRIVE]
