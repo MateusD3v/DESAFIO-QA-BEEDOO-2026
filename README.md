@@ -83,21 +83,61 @@ Após a execução, o Cypress gera automaticamente:
 
 ## 5. Relatório de Bugs Encontrados
 
+Durante a execução dos testes exploratórios e automatizados, foram identificadas diversas falhas críticas que comprometem a qualidade e a usabilidade da aplicação.
+
 | ID | Título do Bug | Severidade | Status |
 |----|---------------|------------|--------|
-| BUG-001 | [Exemplo] Erro ao cadastrar curso com título vazio | Alta | Aberto |
+| BUG-001 | Falha na Exclusão de Cursos | Crítica | Aberto |
+| BUG-002 | Cadastro de Curso com campos vazios | Alta | Aberto |
+| BUG-003 | Aceite de valores negativos em campos numéricos | Média | Aberto |
+| BUG-004 | Ausência de validação de formato de URL | Média | Aberto |
+| BUG-005 | Problemas de Responsividade em dispositivos móveis | Baixa | Aberto |
 
 ### Detalhes dos Bugs
 
-#### BUG-001: [Título do Bug]
+#### BUG-001: Falha na Exclusão de Cursos
+*   **Descrição**: Ao tentar excluir um curso da listagem, a ação não é concluída ou o curso retorna após atualização.
 *   **Passos para reproduzir**:
-    1. Acessar a tela de cadastro.
-    2. Deixar o campo "Título" vazio.
-    3. Preencher os demais campos.
-    4. Clicar em "Salvar".
-*   **Resultado Atual**: O sistema não exibe mensagem de erro e recarrega a página.
-*   **Resultado Esperado**: O sistema deve exibir a mensagem "O campo Título é obrigatório".
-*   **Severidade**: Alta
-*   **Evidência**: [Link ou Imagem]
+    1. Acessar a listagem de cursos.
+    2. Identificar um curso existente.
+    3. Clicar no botão/ícone de "Excluir".
+    4. Confirmar a ação (se houver modal).
+    5. Atualizar a página (F5).
+*   **Resultado Atual**: O curso permanece na lista ou o botão de exclusão não dispara nenhuma ação.
+*   **Resultado Esperado**: O curso deveria ser removido permanentemente da base de dados e da visualização.
+*   **Severidade**: Crítica (Impede o gerenciamento do ciclo de vida dos dados).
 
-*(Adicione novos bugs seguindo este modelo)*
+#### BUG-002: Cadastro de Curso com campos vazios
+*   **Descrição**: O sistema permite cadastrar cursos sem preencher campos obrigatórios como Título ou Descrição.
+*   **Passos para reproduzir**:
+    1. Acessar a tela de cadastro (`/new-course`).
+    2. Deixar todos os campos em branco.
+    3. Clicar em "Salvar".
+*   **Resultado Atual**: O sistema cria um registro "vazio" na listagem ou recarrega sem erro.
+*   **Resultado Esperado**: O sistema deve impedir o envio e exibir mensagens de validação ("Campo obrigatório") abaixo de cada input.
+*   **Severidade**: Alta (Compromete a integridade da base de dados).
+
+#### BUG-003: Aceite de valores negativos em campos numéricos
+*   **Descrição**: Campos como "Carga Horária" ou "Quantidade de Participantes" aceitam valores negativos.
+*   **Passos para reproduzir**:
+    1. No cadastro, preencher "Carga Horária" com `-10`.
+    2. Salvar o curso.
+*   **Resultado Atual**: O curso é salvo com carga horária negativa.
+*   **Resultado Esperado**: O campo deve aceitar apenas números inteiros positivos ou exibir erro de validação.
+*   **Severidade**: Média (Dados inconsistentes com a realidade).
+
+#### BUG-004: Ausência de validação de formato de URL
+*   **Descrição**: O campo de Link/URL do curso aceita texto comum ou formatos inválidos.
+*   **Passos para reproduzir**:
+    1. No campo de "Link do Curso", digitar "texto aleatorio" (sem http/https).
+    2. Salvar.
+*   **Resultado Atual**: O sistema aceita o texto. Ao clicar no link na listagem, ocorre erro 404 ou comportamento inesperado.
+*   **Resultado Esperado**: O campo deve validar o formato de URL (regex) ou o tipo do input deve ser `url`.
+*   **Severidade**: Média.
+
+#### BUG-005: Problemas de Responsividade
+*   **Descrição**: A interface quebra ou elementos se sobrepõem em telas menores (mobile).
+*   **Evidência**: Visualização em modo de inspeção (F12) com resolução 375x667 (iPhone SE).
+*   **Resultado Atual**: Botões de ação ficam inacessíveis ou tabela de listagem cria barra de rolagem horizontal excessiva.
+*   **Resultado Esperado**: O layout deve se adaptar (Grid/Flexbox) para visualização vertical em mobile.
+*   **Severidade**: Baixa (Afeta usabilidade em dispositivos específicos).
