@@ -44,7 +44,9 @@ Acesse a planilha completa com os cenários e casos de teste no link abaixo:
 > **Backup**: Os cenários também estão disponíveis neste repositório em formato [Markdown (CENARIOS.md)](CENARIOS.md) e [CSV (CENARIOS_DE_TESTE.csv)](CENARIOS_DE_TESTE.csv).
 
 ### 📂 Evidências de Execução
-[INSIRA AQUI O LINK DA SUA PASTA NO GOOGLE DRIVE]
+As evidências de execução dos testes (prints e vídeos) estão disponíveis no Google Drive:
+
+👉 **[Google Drive - Evidências de Teste](https://drive.google.com/drive/folders/1bcNt1JwPEjFdSKrItkS7eqQD9Ao2XTtf?usp=sharing)**
 
 ---
 
