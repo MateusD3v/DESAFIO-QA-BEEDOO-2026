@@ -37,9 +37,12 @@ A aplicação tem como objetivo principal gerenciar o catálogo de cursos de uma
 ## 3. Artefatos de Teste
 
 ### 📄 Planilha de Cenários e Casos de Teste
-[INSIRA AQUI O LINK DA SUA PLANILHA NO GOOGLE SHEETS]
+Os cenários de teste foram documentados diretamente neste repositório para facilitar a visualização e versionamento.
 
-> **Nota**: Um arquivo `CENARIOS_DE_TESTE.csv` foi gerado neste repositório para facilitar a importação para o Google Sheets.
+*   **[Visualizar Cenários de Teste (Markdown)](CENARIOS.md)**
+*   **[Baixar Planilha (CSV)](CENARIOS_DE_TESTE.csv)**
+
+> **Nota**: Caso seja necessário importar para o Google Sheets, utilize o arquivo CSV acima.
 
 ### 📂 Evidências de Execução
 [INSIRA AQUI O LINK DA SUA PASTA NO GOOGLE DRIVE]
