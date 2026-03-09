@@ -46,7 +46,38 @@ A aplicação tem como objetivo principal gerenciar o catálogo de cursos de uma
 
 ---
 
-## 4. Relatório de Bugs Encontrados
+## 4. Automação de Testes (Cypress)
+
+Para garantir a qualidade contínua e facilitar a execução repetitiva dos testes, foi implementada uma suíte de testes automatizados utilizando **Cypress**.
+
+### Estrutura do Projeto de Automação
+*   `cypress/e2e/beedoo.cy.js`: Contém os scripts de teste para os fluxos de Cadastro e Listagem.
+*   `cypress.config.js`: Configurações do Cypress (Base URL, Vídeo, Screenshots).
+
+### Como Executar os Testes Automatizados
+
+1.  **Pré-requisitos**: Certifique-se de ter o [Node.js](https://nodejs.org/) instalado.
+2.  **Instalação**: No terminal, na raiz do projeto, execute:
+    ```bash
+    npm install
+    ```
+3.  **Execução (Modo Headless)**: Para rodar os testes e gerar vídeos/screenshots:
+    ```bash
+    npm test
+    ```
+4.  **Execução (Modo Interativo)**: Para ver os testes rodando em tempo real:
+    ```bash
+    npm run test:open
+    ```
+
+### Evidências Geradas Automaticamente
+Após a execução, o Cypress gera automaticamente:
+*   **Vídeos**: Na pasta `cypress/videos`.
+*   **Screenshots**: Na pasta `cypress/screenshots` (em caso de falha ou quando solicitado no script).
+
+---
+
+## 5. Relatório de Bugs Encontrados
 
 | ID | Título do Bug | Severidade | Status |
 |----|---------------|------------|--------|
